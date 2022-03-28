@@ -1,0 +1,24 @@
+<h1> Hello ITS my To do APP </h1>
+
+
+<table>
+    <tr>
+        <th>items</th>
+    </tr>
+{%  for task in object_list %}
+<tr>
+    <td>
+        {{task.title}}
+    </td>
+
+   <td>{% url 'todolist:detailview' task.id%} </td>
+   <td>{% url 'todolist:task-create'  %}</td>
+   <td> {% url 'todolist:task-update'task.id %}</td>
+    
+</tr>
+{% empty %}
+<h3>No items in the List</h3>
+
+<a href=''> Add a new Item</a>
+ {% endfor %}
+</table>
